@@ -51,18 +51,6 @@
         ...acc,[input.id]: input.value } ), {})
     })();
 
-/*
-
-var button = document.getElementById('btn');
-
-const hellp = (function myFunction() {
-    return Array.from(document.querySelector('#dino-compare')).reduce((acc, input) => ({
-        ...acc,[input.id]: input.value } ), {});
-    })();
-
-button.addEventListener('click', hellp);
-
-*/
         
     // Create Dino Compare Method 1
     Dinosaur.prototype.compareHeight = function () {
@@ -124,12 +112,8 @@ button.addEventListener('click', hellp);
     console.log('working 2')
 })();
 
-let numbers = [1, 4, 6, 3, 78, 90];
-numbers.forEach(function(number) {
-    console.log(number);
-})
 
-        // Remove form from screen
+// Remove form from screen
 
 
 // On button click, prepare and display infographic

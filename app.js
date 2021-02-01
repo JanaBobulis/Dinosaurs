@@ -8,7 +8,7 @@
         this.where = where;
         this.when = when;
         this.fact = fact;
-        this.image = "./images" + '.png';
+        this.image = image;
     }
 
     //fetch Dino data from JSON 

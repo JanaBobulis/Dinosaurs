@@ -117,7 +117,10 @@
 
 
 // On button click, prepare and display infographic
-
+const button = document.getElementById('btn');
+button.addEventListener('click', function(e) {
+     
+});
 
 /*
 function generateTitles () {

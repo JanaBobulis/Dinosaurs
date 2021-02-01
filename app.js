@@ -40,17 +40,6 @@
     }
     console.log(dinos);
 
-    // Create Human Object
-    const human = {};
-
-
-    // Use IIFE to get human data from form
-
-    const getHumanData = (function myFunction() {
-    return Array.from(document.querySelector('#dino-compare')).reduce((acc, input) => ({
-        ...acc,[input.id]: input.value } ), {})
-    })();
-
         
     // Create Dino Compare Method 1
     Dinosaur.prototype.compareHeight = function () {
@@ -87,31 +76,61 @@
         }
     };
 
-    //random fact 
-    Dinosaur.prototype.randomFact = function() {
-        return this.fact[Math.floor(math.random() * this.fact.length - 1)];
-    };
 
     // Generate Tiles for each Dino in Array
-    (function () {
-        console.log('working 1')
+    (async function () {
+        // Create Human Object
+     let human = {};
+
+     // Use IIFE to get human data from form
+     (function getHumanData() {
+         human.name = document.getElementById('name').value;
+         human.height = document.getElementById('feet').value + document.getElementById('inches').value;
+         human.weight = document.getElementById('weight').value;
+         human.diet = document.getElementById('diet').value;
+         human.image = document.getElementById('./images/human.png')
+
+     })();
+     console.log(human);
+
+        // dino instances & dino objects
+        const dinos = []; 
+        const createDinoArr = await getDinoData();
+        createDinoArr.forEach(item => {
+            const dinosaurs = new Dinosaur(
+                item.species,
+                item.weight,
+                item.height,
+                item.diet,
+                item.where,
+                item.when,
+                item.fact,
+                item.image
+            );
+            dinos.push(dinosaurs);
+        });
 
     dinos.forEach(function (generateData) {
         let grid = document.getElementById('grid');
         let newCard = document.createElement('div');
-        let cardTitle = document.createElement('h3');
-        let cardImg = document.createElement('img');
+        let cardTitle = document.createElement('h4');
+        cardTitle.innerHTML = generateData.species;
+        cardTitle.innerHTML += 
+        `<img src="./images/${generateData.species}.png" alt="${generateData.species} image"/>` 
         let cardFact = document.createElement('p');
+        cardFact.innerHTML = generateData.fact;
         newCard.classList.add('grid-item');
         grid.appendChild(newCard);
         newCard.appendChild(cardTitle);
-        newCard.appendChild(cardImg);
+        newCard.appendChild(cardFact);
         console.log('working inside');
-        console.log(generateData);
-    })
-    console.log('working 2')
-})();
 
+        const dinoFact = generateData.fact;
+        dinoFact[Math.floor(Math.random() * dinoFact.length)];
+        console.log(dinoFact[Math.floor(Math.random() * dinoFact.length)]);
+    })
+    console.log('working 2', dinos);
+})();
 
 // Remove form from screen
 //document.getElementById('dino-compare').style.display = "none";

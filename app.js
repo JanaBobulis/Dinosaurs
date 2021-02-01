@@ -114,6 +114,7 @@
 
 
 // Remove form from screen
+//document.getElementById('dino-compare').style.display = "none";
 
 
 // On button click, prepare and display infographic

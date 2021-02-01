@@ -18,28 +18,7 @@
         return data.Dinos; //return "Dinos" is taken from JSON file as a path to the info of Dinos.
     };
 
-    // dino instances & dino objects
-    const dinos = []; 
-
-    window.onload = async () => {
-        const createDinoArr = await getDinoData();
-        console.log(createDinoArr);
-        console.log(dinos);
-        createDinoArr.forEach(item => {
-            const dinosaurs = new Dinosaur(
-                item.species,
-                item.weight,
-                item.height,
-                item.diet,
-                item.where,
-                item.when,
-                item.fact
-            );
-            dinos.push(dinosaurs);
-        });
-    }
-    console.log(dinos);
-
+ 
         
     // Create Dino Compare Method 1
     Dinosaur.prototype.compareHeight = function () {

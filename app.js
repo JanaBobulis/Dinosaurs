@@ -103,10 +103,6 @@
         newCard.appendChild(cardTitle);
         newCard.appendChild(cardFact);
         console.log('working inside');
-
-        const dinoFact = generateData.fact;
-        dinoFact[Math.floor(Math.random() * dinoFact.length)];
-        console.log(dinoFact[Math.floor(Math.random() * dinoFact.length)]);
     })
     console.log('working 2', dinos);
 })();

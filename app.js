@@ -1,6 +1,6 @@
 
     // Create Dino Constructor
-    function Dinosaur(species, weight, height, diet, where, when, fact) {
+    function Dinosaur(species, weight, height, diet, where, when, fact, image) {
         this.species = species;
         this.weight = weight;
         this.height = height;
@@ -18,8 +18,13 @@
         return data.Dinos; //return "Dinos" is taken from JSON file as a path to the info of Dinos.
     };
 
- 
-        
+    const button = document.getElementById('btn');
+button.addEventListener('click', function(e) {
+     
+});
+
+   
+
     // Create Dino Compare Method 1
     Dinosaur.prototype.compareHeight = function () {
         if(human.height < this.height){
@@ -55,6 +60,11 @@
         }
     };
 
+    //random fact 
+
+
+// On button click, prepare and display infographic
+
 
     // Generate Tiles for each Dino in Array
     (async function () {
@@ -89,6 +99,7 @@
             dinos.push(dinosaurs);
         });
 
+
     dinos.forEach(function (generateData) {
         let grid = document.getElementById('grid');
         let newCard = document.createElement('div');
@@ -103,17 +114,20 @@
         newCard.appendChild(cardTitle);
         newCard.appendChild(cardFact);
         console.log('working inside');
+
+        const dinoFact = generateData.fact;
+        dinoFact[Math.floor(Math.random() * dinoFact.length)];
+        console.log(dinoFact[Math.floor(Math.random() * dinoFact.length)]);
     })
+
+   
+
     console.log('working 2', dinos);
+
+
 })();
+
+
 
 // Remove form from screen
 //document.getElementById('dino-compare').style.display = "none";
-
-
-// On button click, prepare and display infographic
-const button = document.getElementById('btn');
-button.addEventListener('click', function(e) {
-     
-});
-

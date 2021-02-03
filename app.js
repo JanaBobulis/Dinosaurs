@@ -128,7 +128,7 @@ button.addEventListener('click', function (e) {
           case 4:
             randomFact = `${generateData.species} lived in ${generateData.where} during ${generateData.when}`
             break
-           case 5:
+          case 5:
             randomFact = `${generateData.species} used to live in ${generateData.where}.`
             break
           default:

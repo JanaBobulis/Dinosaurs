@@ -70,7 +70,7 @@ button.addEventListener('click', function (e) {
       const cardTitle = document.createElement('h3')
       cardTitle.innerHTML = generateData.species
       cardTitle.innerHTML +=
-                `<img src="./images/${generateData.species}.png" alt="${generateData.species} image"/>`
+                `<img src="/images/${generateData.species}.png" alt="${generateData.species} image"/>`
       const cardFact = document.createElement('p')
       cardFact.innerHTML = generateData.fact
       newCard.classList.add('grid-item')

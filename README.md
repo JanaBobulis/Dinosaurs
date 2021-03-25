@@ -8,3 +8,11 @@ The goal of this project was to build an infographic with already provided data(
 
 
 ### Object Oriented Javascript 
+
+Steps I followed:
+
+* Dinosaur constructor was created with arguments that are going to be used later on to compare Dinosaurs and human
+* Since information was stored in json file, I fetched the data to app.js
+* In order to get data from the form, I have created IIFE.
+* Since we are comparing Dinosaur with human, I have created 3 compare methods with an if else statement where I added a few more facts. 
+* Button event listener was created for data to be shown on click and display to be visible and form deleted. 
